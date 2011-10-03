@@ -1,0 +1,40 @@
+PLAYERS
+- Find other players, clubs, pros and tournaments
+- Follow other players, pros or clubs
+- Find available lessons (by club, pro or area)
+- Look up your ranking / standings at USTA site
+
+
+
+*** NOTE: NO ONE PLAYS IN UNSANCTIONED TOURNAMENTS
+
+CLUBS
+- Set profile details (bio, contact info, programs)
+- Relate to pros
+- Set up tournaments (list) (can we iFrame or API to USTA)
+- Sign up for programs? Could just send an email to pro shop.
+- Mixer invites
+
+        - USTA PROCESS
+        - Apply for tournaments
+                - Enter all information for tournaments
+                        - Divisions
+                        - How many courts
+                        - Determining if its ok to saction it
+                - Wait for USTA approval
+        - Club seeds through USTA
+                USTA Backoffice -> Autoseed
+                Some room for alteration based on pros discretion
+
+
+
+*** MEMBERSHIP DRIVEN DESIGN ***
+
+*** MANAGING LESSONS / COURT SCHEDULES IS THE BIG ONE ***
+
+- RE: Court time
+        - If court time is abandoned, pro has opportunity to fill it naturally, else
+        - pro notifies club, club fills time.
+
+
+
