@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111003193621) do
+ActiveRecord::Schema.define(:version => 20111003194924) do
+
+  create_table "clubs", :force => true do |t|
+    t.string   "name"
+    t.integer  "owner_id"
+    t.text     "bio"
+    t.text     "contact_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
