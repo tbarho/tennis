@@ -1,3 +1,29 @@
+= New Notes
+
+== Models
+
+=== Users, Clubs & Pros
+
+  User [name, email, password, pro(b), admin(b)]
+  Club [name, owner_id, bio, address, phone, email, contact]
+  
+A Club belongs to user (owner).  A User can be a Pro.  A Club has many pros.
+
+  @club.owner
+  @club.pros
+
+A Pro (User) has one club.
+
+  @pro.club
+
+
+
+
+
+
+
+= OLD NOTES
+
 PLAYERS
 - Find other players, clubs, pros and tournaments
 - Follow other players, pros or clubs
