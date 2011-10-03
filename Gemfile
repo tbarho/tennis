@@ -33,11 +33,13 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'rspec'
+  gem 'webrat'
+  gem 'factory_girl_rails'
 end
 
-gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen', :group => 'development'
-gem "rspec-rails", :group => "development"
-gem "webrat", :group => "development"
-gem "rspec", :group => "test"
-gem "webrat", :group => "test"
-gem "factory_girl_rails", :group => "test"
+group :development do
+  gem 'rspec-rails'
+  gem 'webrat'
+  gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen'
+end
