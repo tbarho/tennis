@@ -3,8 +3,6 @@ Tennis::Application.routes.draw do
 
   root :to => 'pages#home'
 
-  root :to => 'sessions#new'
-
   match '/signout', :to => 'sessions#destroy'
 
   match '/signin', :to => 'sessions#new'

@@ -37,6 +37,29 @@ Relationships will need to be polymorphic, since Clubs are not users.  Otherwise
   @club.following?(@user)
   @user.following?(@club)
 
+== Meeting Notes
+
+=== Core features
+
+  Players can sign up
+  Pros can sign up
+  Clubs can sign up
+  They can all follow each other
+  They all have their own pages and status posts
+  Players can log matches
+  Players can show match record
+  Players can take match notes
+  Players can request lessons from Pros
+  Pros can belong to clubs
+  Pros can share notes on lessons with Students
+  Events are HUGE
+
+
+
+
+
+
+
 
 
 = OLD NOTES
