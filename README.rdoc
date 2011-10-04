@@ -37,7 +37,6 @@ Relationships will need to be polymorphic, since Clubs are not users.  Otherwise
   @club.following?(@user)
   @user.following?(@club)
 
-Testing out inline editing on github.
 
 
 = OLD NOTES
