@@ -26,7 +26,7 @@ You should be able to remove Pros (Users) from Clubs
 
 === Following Users, Pros and Clubs
 
-Relationships will need to be polymorphic, since Clubs are not users.  Otherwise, similar to sample_app.
+Relationships will need to be polymorphic, since Clubs are not users.  Otherwise, similar to sample_app. Consider using helpers for resource DRY.
 
   @club.follow!(@user)
   @user.follow!(@club)
