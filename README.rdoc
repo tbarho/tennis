@@ -16,6 +16,15 @@ A Pro (User) has one club.
 
   @pro.club
 
+You should be able to add pros to clubs
+
+  @club.pro!(@pro)
+
+You should be able to remove Pros (Users) from Clubs
+
+  @club.unpro!(@pro)
+
+
 
 
 

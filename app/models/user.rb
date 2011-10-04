@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
 
   has_many :clubs, :foreign_key => "owner_id"
+  
+  has_many :club_pro_relationships, :foreign_key => "pro_id", :dependent => :destroy
+  has_one :club, :through => :club_pro_relationships, :source => :club
 
   validates :name, :presence => true,
                    :length => { :maximum => 50 }
@@ -30,6 +33,10 @@ class User < ActiveRecord::Base
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
+  end
+  
+  def club_pro?(club)
+    club.pros.exists?(self)
   end
 
   private

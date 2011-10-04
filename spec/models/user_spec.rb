@@ -136,5 +136,27 @@ describe User do
       @user.should be_admin
     end
   end
+
+  describe "club_pro relationships" do
+    before(:each) do
+      @user = User.create!(@attr)
+      @user.toggle!(:pro)
+      @club = Factory(:club)
+    end
+    it "should have a club_pro_relationships attribute" do
+      @user.should respond_to(:club_pro_relationships)
+    end
+    it "should respond to club" do
+      @user.should respond_to(:club)
+    end
+    it "should have a club_pro? method" do
+      @user.should respond_to(:club_pro?)
+    end
+    it "should be a pro at a club" do
+      @club.pro!(@user)
+      @user.should be_club_pro(@club)
+    end
+
+  end
   
 end

@@ -47,7 +47,7 @@ describe Club do
       @club = @user.clubs.create!(@attr)
     end
 
-    describe "owner" do
+    describe "owner relationship" do
       before(:each) do
         @owner = @user
       end
@@ -58,6 +58,31 @@ describe Club do
         @club.owner_id.should == @owner.id
         @club.owner.should == @owner
       end
+    end
+
+    describe "pros relationship" do
+      before(:each) do
+        @pro = Factory(:user, :email => Factory.next(:email))
+        @pro.toggle!(:pro)
+      end
+      it "should have a pros attribute" do
+        @club.should respond_to(:pros)
+      end
+      it "should have a pro! method" do
+        @club.should respond_to(:pro!)
+      end
+      it "should include the pro User in the pros array" do
+        @club.pro!(@pro)
+        @club.pros.should include(@pro)
+      end
+      it "should have an unpro! method" do
+        @club.should respond_to(:unpro!)
+      end
+      it "should prohibit the pro User from being a Club pro" do
+        @club.pro!(@pro)
+        @club.unpro!(@pro)
+        @club.pros.should_not include(@pro)
+      end 
     end
 
   end
