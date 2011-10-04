@@ -24,10 +24,18 @@ You should be able to remove Pros (Users) from Clubs
 
   @club.unpro!(@pro)
 
+=== Following Users, Pros and Clubs
 
+Relationships will need to be polymorphic, since Clubs are not users.  Otherwise, similar to sample_app.
 
+  @club.follow!(@user)
+  @user.follow!(@club)
 
+  @club.unfollow!(@user)
+  @user.unfollow!(@club)
 
+  @club.following?(@user)
+  @user.following?(@club)
 
 
 
