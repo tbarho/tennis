@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
 
   has_many :clubs, :foreign_key => "owner_id"
   
-  has_many :club_pro_relationships, :foreign_key => "pro_id", :dependent => :destroy
+  has_one :club_pro_relationships, :foreign_key => "pro_id", :dependent => :destroy
   has_one :club, :through => :club_pro_relationships, :source => :club
+
+  has_many :relationships, :as => :follower, :dependent => :destroy
+  has_many :following, :through => :relationships, :source => :followed
 
   validates :name, :presence => true,
                    :length => { :maximum => 50 }
@@ -19,6 +22,7 @@ class User < ActiveRecord::Base
                        :length => { :within => 6..40 }
 
   before_save :encrypt_password
+
 
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)    

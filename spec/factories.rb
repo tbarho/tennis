@@ -15,3 +15,7 @@ Factory.define :club do |club|
   club.bio "Biographical information for Sample Club"
   club.contact_info "Contact information for Sample Club"
 end
+
+Factory.sequence :club_name do |n|
+  "Sample Club #{n}"
+end
